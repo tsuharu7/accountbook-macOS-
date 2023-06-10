@@ -14,7 +14,9 @@ public class FileCom {
 	//ファイル拡張子名
 	static final String txt = ".txt";
 	//ユーザーファイル作成時のパス指定
-	static final String userpath = ".\\UserDate";
+	static final String userpath = "./UserData";
+	//macOS用のパス
+
 	
 	/*
 	 * ファイル作成を行う
@@ -27,7 +29,7 @@ public class FileCom {
 		String result;
 		checkDir(userpath);
 		//ファイルパス
-		String path = userpath + "\\" + fileName + txt;
+		String path = userpath + "/" + fileName + txt;
 		
 		//Fileオブジェクトを生成
 		File file = new File(path);
@@ -59,7 +61,7 @@ public class FileCom {
     	 //ユーザー名初期化
     	 String username = null;
     	 
-    	 String searchPath = userpath + fileName + txt;
+    	 String searchPath = userpath +"/"+ fileName + txt;
     	 Path file = Paths.get(searchPath);
     	 
     	 if (Files.exists(file)) {
